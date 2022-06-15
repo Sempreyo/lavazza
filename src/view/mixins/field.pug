@@ -1,0 +1,6 @@
+mixin field(type, fieldName, className, hint)
+	label.field(class=className)
+		input(type=type, name=fieldName, placeholder=hint)&attributes(attributes)
+		span.field__hint!= hint
+		span.field__underline
+		.field-error

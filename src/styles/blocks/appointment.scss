@@ -1,0 +1,69 @@
+.appointment {
+	padding: 92px 0 98px;
+
+	@include max(md) {
+		padding: 50px 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-top: 70px;
+
+		@include max(md) {
+			margin-top: 40px;
+		}
+	}
+
+	&__item {
+		width: 31.5%;
+		position: relative;
+
+		@include max(lg) {
+			width: 48%;
+			margin-bottom: 35px;
+		}
+
+		@include max(sm) {
+			width: 100%;
+		}
+
+		p {
+			font-size: 24px;
+			line-height: 145%;
+			font-weight: 500;
+			margin-top: 20px;
+
+			@include max(lg) {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+
+		@include max(lg) {
+			height: 0;
+			padding-top: 80%;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+
+			@include max(lg) {
+				object-fit: cover;
+				object-position: top;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+}

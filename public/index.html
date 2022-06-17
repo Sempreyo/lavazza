@@ -16,8 +16,8 @@
     </div>
     <header class="header wow fadeInDown">
       <div class="container header__container">
-        <div class="header__col"><a href="/">
-            <div class="logo header__logo">art coffee</div></a>
+        <div class="header__col">
+          <div class="logo header__logo">art coffee</div>
           <nav class="header__nav">
             <li><a href="#" target="_blank">Главная</a></li>
             <li><a href="#" target="_blank">Преимущества</a></li>
@@ -52,8 +52,8 @@
       <section class="first-screen">
         <div class="container first-screen__container">
           <div class="first-screen__col wow fadeInLeft" data-wow-delay="0.2s">
-            <h1 class="first-screen__title">Кофемашина<br><span>Lavazza LB 1100</span><br>в аренду бесплатно</h1>
-            <div class="first-screen__text">Хотите получить бесплатно кофемашину позвоните нам</div>
+            <h1 class="first-screen__title">Кофемашина<br><span>Lavazza <span class="model">LB 1100</span></span><br>в аренду бесплатно</h1>
+            <div class="first-screen__text">Выбери свою бесплатную кофемашину Lavazza!</div>
             <div class="first-screen__btn"><a class="button" href="#">Заказать звонок</a>
             </div>
             <div class="first-screen__nav">
@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="first-screen__col">
-            <div class="first-screen__marquee js-marquee-1"><span>кофемашина бесплатно</span></div>
+            <div class="first-screen__marquee js-marquee-1"><span>кофемашина бесплатно</span><span>кофемашина бесплатно</span><span>кофемашина бесплатно</span></div>
             <div class="first-screen__slider swiper-container __js_slider-products wow fadeInRight" data-wow-delay="0.4s">
               <div class="swiper-wrapper">
                 <div class="first-screen__product swiper-slide">
@@ -137,20 +137,52 @@
         </div>
       </section>
       <section class="appointment">
-        <div class="container">
-          <div class="title">Для чего подходят наши кофемашины</div>
-          <div class="appointment__wrapper">
-            <div class="appointment__item">
-              <div class="appointment__image"><img src="images/appointment/1.jpg" srcset="images/appointment/1@2x.jpg 2x" alt=""></div>
-              <p>Для офиса</p>
+        <div class="container appointment__container">
+          <div class="appointment__bg"></div>
+          <div class="appointment__mobile">
+            <div class="title title--white wow fadeInDown">Для чего подходят наши кофемашины</div>
+            <div class="appointment__row">
+              <div class="appointment__row-item wow fadeInDown" data-wow-delay="0.3s">
+                <div class="appointment__icon">
+                  <svg>
+                    <use xlink:href="./images/sprite.svg#office"></use>
+                  </svg>
+                </div>
+                <p>Для офиса</p>
+              </div>
+              <div class="appointment__row-item wow fadeInDown" data-wow-delay="0.6s">
+                <div class="appointment__icon">
+                  <svg>
+                    <use xlink:href="./images/sprite.svg#coffee"></use>
+                  </svg>
+                </div>
+                <p>Для кофе на вынос</p>
+              </div>
+              <div class="appointment__row-item wow fadeInDown" data-wow-delay="0.9s">
+                <div class="appointment__icon">
+                  <svg>
+                    <use xlink:href="./images/sprite.svg#home"></use>
+                  </svg>
+                </div>
+                <p>Для дома</p>
+              </div>
             </div>
-            <div class="appointment__item">
-              <div class="appointment__image"><img src="images/appointment/2.jpg" srcset="images/appointment/2@2x.jpg 2x" alt=""></div>
-              <p>Для кофе на вынос</p>
-            </div>
-            <div class="appointment__item">
-              <div class="appointment__image"><img src="images/appointment/3.jpg" srcset="images/appointment/3@2x.jpg 2x" alt=""></div>
-              <p>Для дома</p>
+          </div>
+          <div class="appointment__desk">
+            <div class="title wow fadeInDown">Для чего подходят наши кофемашины</div>
+            <div class="appointment__wrapper">
+              <div class="appointment__item wow fadeInDown" data-wow-delay="0.3s">
+                <div class="appointment__image"><img src="images/appointment/1.jpg" srcset="images/appointment/1@2x.jpg 2x" alt=""></div>
+                <p>Для офиса</p>
+              </div>
+              <div class="appointment__item appointment__item--big wow fadeInDown" data-wow-delay="0.7s">
+                <div class="appointment__image"><img src="images/appointment/2.jpg" srcset="images/appointment/2@2x.jpg 2x" alt=""></div>
+                <p>Для кофе на вынос</p>
+              </div>
+              <div class="appointment__item wow fadeInDown" data-wow-delay="0.9s">
+                <div class="appointment__image"><img src="images/appointment/3.jpg" srcset="images/appointment/3@2x.jpg 2x" alt=""></div>
+                <p>Для дома</p>
+              </div>
             </div>
           </div>
         </div>
@@ -298,8 +330,8 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__wrapper">
-          <div class="footer__col"><a href="/">
-              <div class="logo logo--light footer__logo">art coffee</div></a>
+          <div class="footer__col">
+            <div class="logo logo--light footer__logo">art coffee</div>
             <div class="footer__copyrights">© 2021. Все права <br> защищены.</div>
           </div>
           <div class="footer__col">

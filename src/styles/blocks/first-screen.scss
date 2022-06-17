@@ -5,7 +5,6 @@
 	overflow: hidden;
 
 	@include max(md) {
-		height: auto;
 		overflow: visible;
 	}
 
@@ -55,7 +54,14 @@
 
 			@include max(md) {
 				width: 100%;
-				padding-top: 100px;
+				height: 40vh;
+				padding: 85px 0 40px;
+			}
+
+			@media (max-width: 1079px) and (orientation: landscape) {
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
 			}
 		}
 
@@ -69,12 +75,10 @@
 			@include max(md) {
 				align-items: flex-start;
 				width: calc(100% + 48px);
+				height: 60vh;
 				margin: 0 -24px;
+				padding: 20px 0;
 				overflow: hidden;
-			}
-
-			@include max(sm) {
-				padding-top: 100px;
 			}
 		}
 	}
@@ -85,6 +89,11 @@
 		font-weight: 500;
 		color: $black-15;
 
+		@media (max-width: 1079px) and (orientation: landscape) {
+			font-size: 26px;
+			line-height: 30px;
+		}
+
 		@include max(sm) {
 			font-size: 26px;
 			line-height: 30px;
@@ -92,6 +101,10 @@
 
 		span {
 			color: $blue;
+
+			&.model {
+				display: none;
+			}
 		}
 	}
 
@@ -101,8 +114,8 @@
 		color: $gray-6b;
 		margin-top: 40px;
 
-		@include max(sm) {
-			margin-top: 20px;
+		@include max(md) {
+			display: none;
 		}
 	}
 
@@ -110,8 +123,15 @@
 		max-width: 240px;
 		margin-top: 48px;
 
-		@include max(sm) {
-			margin-top: 30px;
+		@include max(md) {
+			margin-top: 20px;
+		}
+
+		a {
+			@include max(md) {
+				padding: 7px 10px;
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -167,6 +187,10 @@
 	&__product {
 		padding: 40px 0;
 		cursor: pointer;
+
+		@include max(md) {
+			padding: 0;
+		}
 	}
 
 	&__product-num,
@@ -189,13 +213,24 @@
 		top: 15px;
 		right: 0;
 
+		@include max(sm) {
+			width: 90px;
+			height: 90px;
+			font-size: 12px;
+		}
+
 		span {
 			font-size: 40px;
 			font-weight: 500;
+
+			@include max(sm) {
+				font-size: 32px;
+			}
 		}
 	}
 
 	&__product-price {
+		display: none;
 		width: 106px;
 		height: 106px;
 		padding-bottom: 9px;
@@ -224,6 +259,10 @@
 		width: 100%;
 		height: 470px;
 
+		@include max(md) {
+			height: 100%;
+		}
+
 		img {
 			width: 100%;
 			height: 100%;
@@ -241,6 +280,7 @@
 		@include max(md) {
 			width: 100%;
 			height: 115px;
+			top: 10px;
 			bottom: unset;
 			left: 0;
 		}
@@ -254,9 +294,14 @@
 			white-space: nowrap;
 
 			@include max(md) {
-				font-size: 80px;
-				line-height: 80px;
+				font-size: 20px;
+				line-height: 20px;
+				color: rgba($white, 0.4);
 				writing-mode: unset;
+			}
+
+			+ span {
+				padding-left: 80px;
 			}
 		}
 	}

@@ -212,6 +212,10 @@ textarea {
 	&--left {
 		text-align: left;
 	}
+
+	&--white {
+		color: $white;
+	}
 }
 
 /* International Telephone Input */

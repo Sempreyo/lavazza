@@ -3,11 +3,6 @@
 	background-color: $mainColor;
 	color: $white;
 
-	&__logo {
-		font-size: 27px;
-		line-height: 140%;
-	}
-
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -18,53 +13,13 @@
 		width: 20%;
 		margin-bottom: 20px;
 
-		&:first-child {
-			width: 15.7%;
-			margin-top: -8px;
-
-			@include max(md) {
-				width: 50%;
-			}
-
-			@include max(xs) {
-				width: 100%;
-			}
+		@include max(md) {
+			width: 50%;
 		}
 
-		&:nth-child(2) {
-			width: 15%;
-
-			@include max(md) {
-				width: 50%;
-			}
-
-			@include max(xs) {
-				width: 100%;
-			}
-		}
-
-		&:nth-child(3) {
-			width: 24%;
-
-			@include max(md) {
-				width: 50%;
-			}
-
-			@include max(xs) {
-				width: 100%;
-			}
-		}
-
-		&:last-child {
-			width: 14.4%;
-
-			@include max(md) {
-				width: 50%;
-			}
-
-			@include max(xs) {
-				width: 100%;
-			}
+		@include max(xs) {
+			width: 100%;
+			text-align: center;
 		}
 	}
 
@@ -74,6 +29,10 @@
 		font-size: 14px;
 		line-height: 17px;
 		color: rgba($gray-9c, 0.7);
+	}
+
+	&__copyrights {
+		margin-top: 20px;
 	}
 
 	&__policy,

@@ -136,18 +136,6 @@
 		}
 	}
 
-	&__logo {
-		margin-right: 70px;
-
-		@include max(lg) {
-			margin-right: 30px;
-		}
-
-		@include max(sm) {
-			margin-right: 0;
-		}
-	}
-
 	&__phone {
 		@include max(sm) {
 			margin-top: 20px;

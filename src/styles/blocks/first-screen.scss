@@ -94,6 +94,10 @@
 			line-height: 30px;
 		}
 
+		@include max(md) {
+			display: none;
+		}
+
 		@include max(sm) {
 			font-size: 26px;
 			line-height: 30px;
@@ -104,6 +108,14 @@
 
 			&.model {
 				display: none;
+			}
+		}
+
+		&--mobile {
+			display: none;
+
+			@include max(md) {
+				display: block;
 			}
 		}
 	}
@@ -230,7 +242,6 @@
 	}
 
 	&__product-price {
-		display: none;
 		width: 106px;
 		height: 106px;
 		padding-bottom: 9px;
@@ -239,7 +250,10 @@
 		color: $white;
 		bottom: 128px;
 		left: 0;
-		transform: rotate(-18deg);
+
+		@include max(md) {
+			bottom: 80px;
+		}
 
 		span {
 			font-size: 40px;

@@ -91,6 +91,7 @@
 
 			&:first-child {
 				top: -34px;
+				left: -5px;
 
 				@include max(sm) {
 					top: 0;
@@ -104,6 +105,19 @@
 					bottom: unset;
 				}
 			}
+		}
+	}
+
+	&__btn {
+		margin-top: 60px;
+		text-align: center;
+
+		@include max(md) {
+			margin-top: 30px;
+		}
+
+		a {
+			max-width: 240px;
 		}
 	}
 }

@@ -151,7 +151,8 @@ $(window).on('load', function () {
 	/* Phone mask */
 	if (phoneInput && phoneInput.length > 0) {
 		window.intlTelInput(document.querySelector('[type="tel"]'), {
-			onlyCountries: ['ru', 'ua', 'kz', 'by'],
+			initialCountry: 'ru',
+			onlyCountries: ['ru', 'ua', 'kz'],
 			utilsScript: '../../public/js/utils.js',
 			dropdownContainer: document.querySelector('.feedback__field--phone'),
 			separateDialCode: true
@@ -173,4 +174,15 @@ $(window).on('load', function () {
 			Inputmask({mask: mask1, keepStatic: true}).mask(document.querySelector('[type="tel"]'));
 		}
 	}
+
+	/* Anchor scroll */
+	document.querySelectorAll('.anchor').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
 });

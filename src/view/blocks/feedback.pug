@@ -2,6 +2,7 @@ section.feedback
 	.container
 		.title.title--left Закажите бесплатную дегустацию
 		form.feedback__form(action='', method='post')
+			input(type='hidden')
 			+field('text', 'firstName', 'feedback__field', 'Имя')(required = true)
 			+field('email', 'email', 'feedback__field', 'E-mail')(required = true)
 			+field('tel', 'phone', 'feedback__field feedback__field--phone', '')(required = true)

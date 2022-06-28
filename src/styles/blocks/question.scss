@@ -95,5 +95,13 @@
 		line-height: 145%;
 		color: $gray-6b;
 		padding-bottom: 25px;
+
+		p + p {
+			margin-top: 20px;
+
+			@include max(sm) {
+				margin-top: 10px;
+			}
+		}
 	}
 }

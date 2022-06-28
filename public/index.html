@@ -18,9 +18,9 @@
       <div class="container header__container">
         <div class="header__col">
           <nav class="header__nav">
-            <li><a href="#" target="_blank">Главная</a></li>
-            <li><a href="#" target="_blank">Преимущества</a></li>
-            <li><a href="#" target="_blank">Контакты</a></li>
+            <li><a href="">Главная</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#feedback">Контакты</a></li>
           </nav>
         </div>
         <div class="header__col">
@@ -33,9 +33,9 @@
       <div class="header__mobile">
         <div class="logo header__logo">art coffee</div>
         <nav class="header__nav">
-          <li><a href="#" target="_blank">Главная</a></li>
-          <li><a href="#" target="_blank">Преимущества</a></li>
-          <li><a href="#" target="_blank">Контакты</a></li>
+          <li><a href="" target="_blank">Главная</a></li>
+          <li><a href="#advantages" target="_blank">Преимущества</a></li>
+          <li><a href="#feedback" target="_blank">Контакты</a></li>
         </nav>
         <div class="header__phone"><a href="tel:+74956407408">+7 (495) 640-74-08</a></div>
         <div class="header__close">
@@ -222,7 +222,7 @@
           </div><a class="button steps__btn" href="#">Бесплатная дегустация</a>
         </div>
       </section>
-      <section class="advantages">
+      <section class="advantages" id="advantages">
         <div class="container">
           <div class="advantages__wrapper">
             <div class="advantages__image"><img src="images/advantages.jpg" srcset="images/advantages@2x.jpg 2x" alt=""></div>
@@ -268,21 +268,29 @@
                   <p>Я живу за городом, могу ли я воспользоваться услугой?</p>
                   <div class="question__plus"></div>
                 </div>
-                <div class="question__text">123</div>
+                <div class="question__text">
+                  Мы осуществляем обслуживание наших клиентов по г. Ростов-на-Дону, г. Батайск и г. Аксай. Доставка в область на расстояние свыше 5 км осуществляется на платной основе.</div>
               </div>
               <div class="question__item">
                 <div class="question__toggle">
                   <p>Что я получаю, как клиент?</p>
                   <div class="question__plus"></div>
                 </div>
-                <div class="question__text">123</div>
+                <div class="question__text">
+                  <p>Вы абсолютно БЕСПЛАТНО получаете:</p>
+                  <p>
+                    Итальянскую кофемашину <br> Сервисное обслуживание, включающее: <br> Доставку кофе до адреса — бесплатно при единовременном заказе от 100 капсул. <br>
+                     Комплексное обслуживание — декальцинация (удаление накипи), очистка системы кофемашины от отложений кофейных масел. <br>
+                  </p>
+                  <p>Сомневаетесь? — Закажите бесплатную дегустацию!</p>
+                </div>
               </div>
               <div class="question__item">
                 <div class="question__toggle">
                   <p>Как быстро я смогу получить кофемашину?</p>
                   <div class="question__plus"></div>
                 </div>
-                <div class="question__text">123</div>
+                <div class="question__text">Мы согласуем с Вами доставку в любой рабочий день с 10 до 17 часов</div>
               </div>
             </div>
             <div class="question__col">
@@ -291,14 +299,15 @@
                   <p>Сколько кофе нужно заказывать?</p>
                   <div class="question__plus"></div>
                 </div>
-                <div class="question__text">123</div>
+                <div class="question__text">Минимальный заказ 50 капсул в месяц. То есть пейте 1-2 чашки кофе в день и пользуйтесь бесплатно кофе-машиной!</div>
               </div>
               <div class="question__item">
                 <div class="question__toggle">
                   <p>Где я могу установить кофемашину?</p>
                   <div class="question__plus"></div>
                 </div>
-                <div class="question__text" style="display: block;">У нас большой парк кофемашин под любые задачи. Мы поможем Вам выбрать кофемашину для квартиры, рабочего места, а также в столовую и кафе.</div>
+                <div class="question__text" style="display: block;">
+                  У нас большой парк кофемашин под любые задачи. Мы поможем Вам выбрать кофемашину для квартиры, рабочего места, а также в столовую и кафе.</div>
               </div>
             </div>
           </div>
@@ -308,6 +317,7 @@
         <div class="container">
           <div class="title title--left">Закажите бесплатную дегустацию</div>
           <form class="feedback__form" action="" method="post">
+            <input type="hidden">
             <label class="field feedback__field">
               <input type="text" name="firstName" placeholder="Имя" required><span class="field__hint">Имя</span><span class="field__underline"></span>
               <div class="field-error"></div>
@@ -327,7 +337,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="feedback">
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__col">

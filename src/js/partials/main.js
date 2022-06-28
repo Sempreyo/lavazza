@@ -5,6 +5,7 @@ $(window).on('load', function () {
 	var header = $('.header');
 	var closeMenu = $('.header__close');
 	var accordionItems = $('.question__toggle');
+	var mobileLinks = $('.header__mobile .header__nav li a');
 
 	/* Header */
 	burger.click(function () {
@@ -31,6 +32,11 @@ $(window).on('load', function () {
 				behavior: 'smooth'
 			});
 		});
+	});
+
+	mobileLinks.click(function () {
+		header.removeClass('open');
+		$('body').removeClass('body-scroll-lock');
 	});
 
 	/* Show marquee on second block */
@@ -174,15 +180,4 @@ $(window).on('load', function () {
 			Inputmask({mask: mask1, keepStatic: true}).mask(document.querySelector('[type="tel"]'));
 		}
 	}
-
-	/* Anchor scroll */
-	document.querySelectorAll('.anchor').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
-
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth'
-			});
-		});
-	});
 });

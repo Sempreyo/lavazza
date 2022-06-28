@@ -11,11 +11,10 @@ header.header.wow.fadeInDown
 			.header__burger-wrapper
 				.header__burger
 	.header__mobile
-		+logo('header__logo')
 		nav.header__nav
 			each item in MENU
 				li
-					a(href=item.url, target='_blank')!= item.text
+					a(href=item.url)!= item.text
 		.header__phone
 			a(href='tel:+74956407408') +7 (495) 640-74-08
 		.header__close

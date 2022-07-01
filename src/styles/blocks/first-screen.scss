@@ -260,7 +260,13 @@
 			bottom: 80px;
 		}
 
+		pre {
+			margin: 0;
+		}
+
 		span {
+			display: inline-flex;
+			align-items: baseline;
 			font-size: 40px;
 			line-height: 48px;
 			font-weight: 500;

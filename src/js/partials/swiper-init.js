@@ -10,8 +10,8 @@ $(window).on('load', function () {
 				loop: true,
 				autoplay: {
 					delay: 3000,
-					disableOnInteraction: true,
-					pauseOnMouseEnter: true
+					disableOnInteraction: false,
+					pauseOnMouseEnter: false
 				},
 				pagination: {
 					type: 'bullets',

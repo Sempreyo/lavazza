@@ -42,19 +42,21 @@ $(window).on('load', function () {
 	/* Show marquee on second block */
 	var secondBlock = $('.choice');
 
-	$(window).scroll(function () {
-		let scroll = $(this).scrollTop();
-		let winH = $(this).innerHeight();
-		let elH = secondBlock.outerHeight();
-		let elOffset = secondBlock.offset().top;
-		let centerScroll = (winH - elH) / 2 + scroll;
+	if (secondBlock && secondBlock.length > 0) {
+		$(window).scroll(function () {
+			let scroll = $(this).scrollTop();
+			let winH = $(this).innerHeight();
+			let elH = secondBlock.outerHeight();
+			let elOffset = secondBlock.offset().top;
+			let centerScroll = (winH - elH) / 2 + scroll;
 
-		if (centerScroll >= elOffset) {
-			$('.marquee').addClass('active');
-		} else {
-			$('.marquee').removeClass('active');
-		}
-	});
+			if (centerScroll >= elOffset) {
+				$('.marquee').addClass('active');
+			} else {
+				$('.marquee').removeClass('active');
+			}
+		});
+	}
 
 	/* Accordion */
 	accordionItems.click(function () {
@@ -101,51 +103,52 @@ $(window).on('load', function () {
 	var isUsed = false;
 
 	function circlesFill() {
-		if (isUsed) {
-			return;
-		}
+		if ($('.steps') && $('.steps').length > 0) {
+			if (isUsed) {
+				return;
+			}
 
-		let scroll = $(this).scrollTop();
-		let winH = $(this).innerHeight();
-		let elH = $('.steps').outerHeight();
-		let elOffset = $('.steps').offset().top;
-		let centerScroll = (winH - elH) / 2 + scroll;
+			let scroll = $(this).scrollTop();
+			let winH = $(this).innerHeight();
+			let elH = $('.steps').outerHeight();
+			let elOffset = $('.steps').offset().top;
+			let centerScroll = (winH - elH) / 2 + scroll;
 
-		if (centerScroll >= elOffset - $('.steps').outerHeight()/2) {
-			circles.forEach((elem, index) => {
-				const circle = new ProgressBar.Circle(elem, {
-					color: '#01488a',
-					trailColor: '#218cef',
-					strokeWidth: 3,
-					trailWidth: 1,
-					duration: 1000
+			if (centerScroll >= elOffset - $('.steps').outerHeight()/2) {
+				circles.forEach((elem, index) => {
+					const circle = new ProgressBar.Circle(elem, {
+						color: '#01488a',
+						trailColor: '#218cef',
+						strokeWidth: 3,
+						trailWidth: 1,
+						duration: 1000
+					});
+
+					switch (index) {
+						case 0:
+							circle.animate(0.25);
+							break;
+						case 1:
+							setTimeout(function () {
+								circle.animate(0.5);
+							}, 500);
+							break;
+						case 2:
+							setTimeout(function () {
+								circle.animate(0.75);
+							}, 1000);
+							break;
+						case 3:
+							setTimeout(function () {
+								circle.animate(1.0);
+							}, 1500);
+							break;
+					}
+
+					isUsed = true;
 				});
-
-				switch (index) {
-					case 0:
-						circle.animate(0.25);
-						break;
-					case 1:
-						setTimeout(function () {
-							circle.animate(0.5);
-						}, 500);
-						break;
-					case 2:
-						setTimeout(function () {
-							circle.animate(0.75);
-						}, 1000);
-						break;
-					case 3:
-						setTimeout(function () {
-							circle.animate(1.0);
-						}, 1500);
-						break;
-				}
-
-				isUsed = true;
-			});
+			}
 		}
-
 	}
 
 	circlesFill();
@@ -163,6 +166,16 @@ $(window).on('load', function () {
 			dropdownContainer: document.querySelector('.feedback__field--phone'),
 			separateDialCode: true
 		});
+
+		$('input[name="phone"]').on('paste', function (e) {
+			e.preventDefault();
+			let text = (e.originalEvent || e).clipboardData.getData('text/plain');
+			window.document.execCommand('insertText', false, text);
+
+			if (text.startsWith($('.iti__selected-dial-code').text())) {
+				$(this).val(text.substring($('.iti__selected-dial-code').text().length));
+			}
+		})
 
 		initPhoneMask();
 

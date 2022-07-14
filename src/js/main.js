@@ -4,9 +4,7 @@
 //= ./libs/wow.min.js
 //= ./libs/jquery.marquee.min.js
 //= ./libs/progressbar.min.js
-//= ./libs/intlTelInput/intlTelInput.min.js
-//= ./libs/intlTelInput/utils.js
-//= ./libs/inputmask.min.js
+//= ./libs/jquery.inputmask.bundle.min.js
 
 /* Common */
 //= ./partials/main.js

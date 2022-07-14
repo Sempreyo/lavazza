@@ -159,38 +159,8 @@ $(window).on('load', function () {
 
 	/* Phone mask */
 	if (phoneInput && phoneInput.length > 0) {
-		window.intlTelInput(document.querySelector('[type="tel"]'), {
-			initialCountry: 'ru',
-			onlyCountries: ['ru', 'ua', 'kz'],
-			utilsScript: '../../public/js/utils.js',
-			dropdownContainer: document.querySelector('.feedback__field--phone'),
-			separateDialCode: true
+		$('input[name="phone"]').inputmask({
+			mask: '+7 (999) 999-99-999'
 		});
-
-		$('input[name="phone"]').on('paste', function (e) {
-			e.preventDefault();
-			let text = (e.originalEvent || e).clipboardData.getData('text/plain');
-			window.document.execCommand('insertText', false, text);
-
-			if (text.startsWith($('.iti__selected-dial-code').text())) {
-				$(this).val(text.substring($('.iti__selected-dial-code').text().length));
-			}
-		})
-
-		initPhoneMask();
-
-		document.querySelector('[type="tel"]').addEventListener('countrychange', function () {
-			initPhoneMask();
-		})
-
-		function initPhoneMask() {
-			let mask1 = document.querySelector('[type="tel"]')
-				.getAttribute('placeholder')
-				.replace(/[0-9+]/ig, '9');
-
-			document.querySelector('[type="tel"]').setAttribute('placeholder', mask1);
-
-			Inputmask({mask: mask1, keepStatic: true}).mask(document.querySelector('[type="tel"]'));
-		}
 	}
 });

@@ -6,15 +6,42 @@
 	width: 100%;
 	cursor: text;
 
-	&__hint {
-		position: absolute;
-		top: -18px;
-		left: 0;
-		display: block;
-		transition: 0.3s;
-		font-size: 12px;
-		line-height: 16px;
-		color: $black;
+	&:not(.field--phone) {
+		#{$self}__hint {
+			position: absolute;
+			top: -18px;
+			left: 0;
+			display: block;
+			transition: 0.3s;
+			font-size: 12px;
+			line-height: 16px;
+			color: $black;
+		}
+
+		input {
+			&::placeholder {
+				color: transparent;
+			}
+
+			&:placeholder-shown ~ #{$self}__hint {
+				font-size: 16px;
+				line-height: 16px;
+				color: $gray-6b;
+				top: 10px;
+
+				@include max(sm) {
+					font-size: 14px;
+					top: 5px;
+				}
+			}
+
+			&:focus {
+				~ #{$self}__hint {
+					font-size: 12px;
+					top: -18px;
+				}
+			}
+		}
 	}
 
 	input {
@@ -33,28 +60,14 @@
 			font-size: 14px;
 		}
 
-		&::placeholder {
-			color: transparent;
-		}
-
-		&:placeholder-shown ~ #{$self}__hint {
-			font-size: 16px;
-			line-height: 16px;
-			color: $gray-6b;
-			top: 5px;
-
-			@include max(sm) {
-				font-size: 14px;
-			}
-		}
-
 		&:focus {
 			border-bottom-color: $black;
+		}
+	}
 
-			~ #{$self}__hint {
-				font-size: 12px;
-				top: -18px;
-			}
+	&--phone {
+		input::placeholder {
+			color: $gray-6b;
 		}
 	}
 }
